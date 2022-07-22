@@ -1,0 +1,45 @@
+<%- include('../partition/header.ejs')%>
+    <section class="registration">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <img src="/assets/img/rs.jpg" alt="" class="img-fluid"
+                        style="border-radius: 40px; box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;">
+                </div>
+                <div class="col-md-4">
+                    <form action="/registration_update/<%= data._id%>" method="post" enctype="multipart/form-data"
+                        class="login">
+                        <div class="login-box">
+                            <h1 class="text-center pt-5 mb-3"> Edit Registration</h1>
+                            <div class="form-group">
+                                <input type="text" name="name" id="" placeholder="Name" required
+                                    value="<%= data.name %>">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="" placeholder="Email" required
+                                    value="<%= data.email %>">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" id="" placeholder="Phone" required
+                                    value="<%= data.phone %>">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="course" id="" placeholder="Course" required
+                                    value="<%= data.course %>">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="address" id="" cols="30" rows="10"
+                                    placeholder="Address"> <%= data.address %> </textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="image" id="">
+                                <img src="/upload/<%=data.image%>" alt="" class="w-25 mb-3" required>
+                            </div>
+                            <button class="login-btn">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../partition/footer.ejs')%>
